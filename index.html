@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gerador de Assinatura de E-mail | Agência WEBi</title>
+
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="wrapper">
+		<section class="generator">
+			<h1><span>Assinatura de E-mail</span>Agência WEBi</h1>
+			<p>Preencha os campos e gere sua assinatura nos padrões.</p>
+
+			<form class="formGenerator">
+				<span class="field">
+					<label for="foto">Foto de Perfil</label>
+					<input type="url" id="foto" onchange="fillSign(foto);" name="foto" value="" placeholder="Insira o link da sua foto" />
+					<small>Faça upload da sua foto no Google Drive, compartilhe para quem possuir o link, cole este link de compartilhamento neste campo.</small>
+				</span>
+				<span class="field">
+					<label for="nome">Seu nome</label>
+					<input type="text" id="nome" onkeyup="fillSign(nome);" name="nome" value="" placeholder="Digite seu nome" />
+				</span>
+				<span class="field">
+					<label for="funcao">Sua função</label>
+					<input type="text" id="funcao" onkeyup="fillSign(funcao);" name="funcao" value="" placeholder="Digite a sua função" />
+				</span>
+				<span class="field">
+					<label for="email">Seu e-mail</label>
+					<input type="email" id="email" onkeyup="fillSign(email);" name="email" value="" placeholder="Digite seu e-mail" />
+				</span>
+				<span class="field">
+					<label for="fonewebi">Telefone WEBi</label>
+					<input type="text" id="fonewebi" onkeyup="fillSign(fonewebi);" name="fonewebi" value="(48) 3241-3241" placeholder="(48) 3241-3241" />
+				</span>
+				<span class="field">
+					<label for="whatsapp">WhatsApp</label>
+					<input type="text" id="whatsapp" onkeyup="fillSign(whatsapp);" name="whatsapp" value="(48) 3241-3241" placeholder="(48) 3241-3241" />
+				</span>
+			</form>
+
+			<p>Após gerar sua assinatura, clique no botão "Copiar Código" e cole o código gerado no campo de assinatura no Gmail.</p>
+			<button class="copyButton" onclick="copy();">Copiar código</button>
+		</section>
+		<!-- .generator -->
+
+		<section id="copyContent" class="mailsign">
+			<table width="600px" style="width: 600px; font-family: Arial, sans-serif; background: #FFFFFF; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td style="width: 140px; text-align: left; vertical-align: top; padding-top: 10px; border-bottom: 1px solid; border-bottom-color: #F0F0F0;" valign="top" width="140">
+							<img id="fill-foto" style="width: 120px; height: 120px; border-radius: 60px; border: 0;" src="https://via.placeholder.com/120x120/f47921/FFF?text=SUA+FOTO" alt="photograph" width="120" height="120" border="0" />
+						</td>
+						<td style="width: 460px; border-bottom: 1px solid; border-bottom-color: #F0F0F0; padding-top: 10px; padding-bottom: 10px; vertical-align: top;" valign="top" width="140">
+							<table style="font-family: Arial, sans-serif;" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<td style="font-family: Arial, sans-serif; color: #f47921; vertical-align: top; padding-top: 0px; padding-bottom: 15px;" valign="top">
+											<span style="font-family: Arial, sans-serif; color: #f47921; font-weight: bold; font-size: 16pt;"><span id="fill-nome">Seu Nome</span></span>
+											<br />
+											<span style="font-family: Arial, sans-serif; color: #444444; font-weight: bold; font-size: 12pt;"><span id="fill-funcao">Sua Função</span></span>
+										</td>
+									</tr>
+									<tr>
+										<td style="font-family: Arial, sans-serif; color: #444444; line-height: 18px; vertical-align: top; padding-bottom: 10px;" valign="top">
+											<span style="font-family: Arial, sans-serif; color: #444444; font-size: 10pt;">
+												<strong>E-mail:</strong> <span id="fill-email">seuemail@webi.com.br</span>
+											</span>
+											<br />
+											<span style="font-family: Arial, sans-serif; color: #444444; font-size: 10pt;">
+												<strong>Telefone:</strong> <span id="fill-fonewebi">(48) 3241-3241</span> | <strong>WhatsApp:</strong> <span id="fill-whatsapp">(48) 3241-3241</span>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="font-family: Arial, sans-serif; color: #444444; line-height: 18px; vertical-align: top; padding-bottom: 6px;" valign="top">
+											<span style="font-family: Arial, sans-serif; color: #444444; font-size: 10pt;">Rua Joaquim Carneiro, 120, Sala 507</span>
+											<br />
+											<span style="font-family: Arial, sans-serif; color: #444444; font-size: 10pt;">Capoeiras - Florian&oacute;polis/SC - </span>
+											<span style="font-family: Arial, sans-serif; color: #444444; font-size: 10pt;">88085-120</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="font-family: Arial, sans-serif; width: 140px; padding-top: 5px; padding-left: 0; padding-right: 0; text-align: left; vertical-align: middle;" valign="middle" width="140">
+							<a href="https://www.webi.com.br" target="_blank" rel="noopener" style="text-decoration: none;">
+								<span style="color: #f47921; height:  16px; font-family: Arial, sans-serif; font-size: 10pt;">www.webi.com.br</span>
+							</a>
+						</td>
+						<td style="vertical-align: middle; padding-top: 15px; padding-bottom: 5px; text-align: right;" valign="middle">
+							<a href="http://api.whatsapp.com/send?=+554832413241" target="_blank" rel="noopener" style="text-decoration: none;">
+								<img style="border: 0; height: 16px; width: 16px;" src="https://webi.com.br/mailsign/wa.png" alt="facebook icon" width="16" border="0" />
+							</a>
+							<a href="https://www.facebook.com/agenciawebi" target="_blank" rel="noopener" style="text-decoration: none;">
+								<img style="border: 0; height: 16px; width: 16px;" src="https://webi.com.br/mailsign/fb.png" alt="facebook icon" width="16" border="0" />
+							</a>
+							<a href="https://www.youtube.com/user/canaldaWEBI" target="_blank" rel="noopener" style="text-decoration: none;">
+								<img style="border: 0; height: 16px; width: 16px;" src="https://webi.com.br/mailsign/yt.png" alt="youtube icon" width="16" border="0" />
+							</a>
+							<a href="https://www.linkedin.com/company/agencia-webi/" target="_blank" rel="noopener" style="text-decoration: none;">
+								<img style="border: 0; height: 16px; width: 16px;" src="https://webi.com.br/mailsign/ln.png" alt="linkedin icon" width="16" border="0" />
+							</a>
+							<a href="https://www.instagram.com/agenciawebi/" target="_blank" rel="noopener" style="text-decoration: none;">
+								<img style="border: 0; height: 16px; width: 16px;" src="https://webi.com.br/mailsign/it.png" alt="instagram icon" width="16" border="0" />
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 100%; text-align: center; vertical-align: middle;" colspan="2" valign="middle" width="100%">
+							<img style="width: 600px; border: 0;" src="https://webi.com.br/mailsign/topo.png" alt="topo" border="0" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<!-- .mailsign -->
+
+		<script src="scripts.js"></script>
+	</div>	
+	<!-- .wrapper -->
+</body>
+</html>
